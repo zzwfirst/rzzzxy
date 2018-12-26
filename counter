@@ -1,1 +1,1381 @@
-11
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>养猪生产计算器</title>
+		
+		<style type="text/css">
+			
+			body
+			{
+				background-color: #e6e6e6;
+			}
+		  abbr[title] 
+			{
+				text-decoration: none;
+			}
+			a
+			{
+				text-decoration:none;
+				
+			}
+			
+			a:link
+			{
+				color: #001933;
+			}
+			a:visited
+			{
+				color: #001933;
+			}
+			a:hover
+			{
+				color: #FF0000;
+			}
+			
+			input.first
+			{
+				border-top-style: none;
+				border-left-style: none;
+				border-right-style: none;
+				border-bottom-color: #000000;
+				border-bottom-style: solid;
+				border-bottom-width: thin;
+				width: 100px;
+				height: 18px;
+				margin-right: 40px;	
+			}
+			input.two
+			{
+				border-top-style: none;
+				border-left-style: none;
+				border-right-style: none;
+				border-bottom-color: #000000;
+				border-bottom-style: solid;
+				border-bottom-width: thin;
+				width: 70px;
+				height: 18px;
+				margin-right: 40px;	
+			}
+			input.three
+			{
+				border-top-style: none;
+				border-left-style: none;
+				border-right-style: none;
+				border-bottom-color: #000000;
+				border-bottom-style: solid;
+				border-bottom-width: thin;
+				width: 70px;
+				height: 18px;
+				margin-right: 30px;	
+			}
+			input.four
+			{
+				border-top-style: none;
+				border-left-style: none;
+				border-right-style: none;
+				border-bottom-color: #000000;
+				border-bottom-style: solid;
+				border-bottom-width: thin;
+				width: 85px;
+				height: 18px;
+				margin-right: 10px;	
+			}
+			input.five
+			{
+				border-top-style: none;
+				border-left-style: none;
+				border-right-style: none;
+				border-bottom-color: #000000;
+				border-bottom-style: solid;
+				border-bottom-width: thin;
+				width: 70px;
+				height: 18px;
+				margin-right: 30px;	
+			}
+			
+			button.first
+			{ /* 按钮美化 */
+	            width: 100px; /* 宽度 */
+	            height: 25px; /* 高度 */
+	            border-width: 0px; /* 边框宽度 */
+	            border-radius: 3px; /* 边框半径 */
+	            background: #1E90FF; /* 背景颜色 */
+	            cursor: pointer; /* 鼠标移入按钮范围时出现手势 */
+	            outline: none; /* 不显示轮廓线 */
+	            font-family: Microsoft YaHei; /* 设置字体 */
+	            color: white; /* 字体颜色 */
+	            font-size: 12px; /* 字体大小 */
+            }
+				
+			fieldset.first
+			{
+				width: 28%;
+				height: 60%;
+				position: absolute;
+				left: 13%;
+				top: 15%;
+				background-color:#ffffff;
+				border-width: 5px
+				border-color: #ffffff;
+				border: 0;<!--设置对象边框-->
+				width: 320px;
+				
+				box-shadow: 5px 5px 2px #888888; <!--阴影设置-->	
+			}
+			fieldset.sss
+			{
+				width: 86%;
+				height: 11%;
+				position: absolute;
+				left: 12%;
+				top: 0px;
+				background-color:#e6e6e6;
+				border-width: 5px
+				border-color: #ffffff;
+				border: 0;<!--设置对象边框-->
+				height: 88px;
+				box-shadow: 5px 5px 2px #888888; <!--阴影设置-->	
+			}
+			fieldset.the
+			{
+				width: 10%;
+				height: 11%;
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				background-color:#ffffff;
+				border-width: 5px
+				border-color: #ffffff;
+				border: 0;<!--设置对象边框-->
+				height: 80px;
+				box-shadow: 1px 5px 2px #888888; <!--阴影设置-->	
+			}
+			fieldset.four
+			{
+				width: 10%;
+				height: 83%;
+				position: absolute;
+				left: 0px;
+				top: 15%;
+				background-color:#f2f2f2;
+				border-width: 5px
+				border-color: #ffffff;
+				border: 0;<!--设置对象边框-->
+				height: 80px;
+				box-shadow: 1px 5px 2px #888888; <!--阴影设置-->	
+			}
+			fieldset.five
+			{
+				
+				width: 31%;
+				height: 60%;
+				position: absolute;
+				left: 43%;
+				top: 15%;
+				background-color:#ffffff;
+				border-width: 5px
+				border-color: #ffffff;
+				border: 0;<!--设置对象边框-->
+				width: 320px;
+				box-shadow: 5px 5px 2px #888888; <!--阴影设置-->
+			}
+			fieldset.six
+			{
+				
+				width: 61%;
+				height: 19%;
+				position: absolute;
+				left: 13%;
+				top: 78%;
+				background-color:#ffffff;
+				border-width: 5px
+				border-color: #ffffff;
+				border: 0;<!--设置对象边框-->
+				width: 320px;
+				box-shadow: 5px 5px 2px #888888; <!--阴影设置-->
+			}
+			fieldset.sevsn
+			{
+				width: 21%;
+				height: 27%;
+				position: absolute;
+				left: 76%;
+				top: 15%;
+				background-color:#ffffff;
+				border-width: 5px
+				border-color: #ffffff;
+				border: 0;<!--设置对象边框-->
+				width: 320px;
+				box-shadow: 5px 5px 2px #888888; <!--阴影设置-->
+			}
+			fieldset.eight
+			{
+				width: 21%;
+				height: 52%;
+				position: absolute;
+				left: 76%;
+				top: 45%;
+				background-color:#ffffff;
+				border-width: 5px
+				border-color: #ffffff;
+				border: 0;<!--设置对象边框-->
+				width: 320px;
+				box-shadow: 5px 5px 2px #888888; <!--阴影设置-->
+			}
+
+				
+			h1 
+			{  
+				color:#000000;  
+                font: bold 26px/2 Verdana, Geneva, sans-serif;  
+                font-weight: bold;  
+                text-align: left;  
+                text-shadow: 1px 1px 1px rgb(88, 126, 156);    
+            }
+			div
+			{
+				margin: 25px;
+				
+			}
+			button
+			{
+				top: 700px;
+				width: 100px; /* 宽度 */
+				height: 25px; /* 高度 */
+				border-width: 0px; /* 边框宽度 */
+				border-radius: 3px; /* 边框半径 */
+				background: #1E90FF; /* 背景颜色 */
+				cursor: pointer; /* 鼠标移入按钮范围时出现手势 */
+				outline: none; /* 不显示轮廓线 */
+				font-family: Microsoft YaHei; /* 设置字体 */
+				color: white; /* 字体颜色 */
+				font-size: 12px; /* 字体大小 */				
+			}
+			progress
+			{
+				width: 123px;
+				color: #1E90FF;
+				border: #E6E6E6;
+				background: #FF0000;
+			}
+			progress::-webkit-progress-bar
+			{
+				background: #FF0000;
+			}
+			progress::-webkit-progress-value,
+			progress::--moz-progress-bar
+			{
+				background: #1E90FF;
+			}
+			img
+			{				
+
+				width: 100%;
+				height: 63%;
+				
+			}
+
+ 
+        </style>
+	</head>
+	
+	<body>
+		
+  
+		<fieldset class="sss">
+			<legend></legend>
+			<h1>睿智知猪学院生产计算器 2.0版</h1>
+		</fieldset><!--标题-->
+		
+		<fieldset class="the">
+			<legend></legend>
+				<div id="">
+					<image src="logo1.png" ></image>
+				</div>
+		</fieldset><!--边框装饰条-->
+		
+		<fieldset class="four">
+			<legend></legend>
+			    <progress max="15" value="0" id="dn"></progress>
+			    <progress max="35" value="0" id="pg"></progress>
+			    <progress max="3" value="0" id="ls"></progress>
+			    <progress max="34" value="0" id="ms"></progress>
+		</fieldset><!--边框装饰条-->
+		
+			
+		
+		
+		
+		<fieldset class="first">
+			<legend><strong></strong></legend>
+			    <div style="height: 350px; overflow: auto; font-size: 24px;"><!--录入区 滚动条-->
+				
+			
+		            <table>  
+			            <tr>   
+							<td style=font-size:11px><abbr title="基础母猪是指配种入群的母猪，不包括后备母猪"><a href="" target="_blank">基础母猪存栏<small><sup>头</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title="农场常见的批次生产模式包括1周批、3周批、5周批等"><a href="">生产批次<small><sup>周</sup></small></a></abbr></style></td>
+			            </tr>
+			            <tr>  
+							<td><input class="first" type="number" id="in1"></td>
+							<td><input class="first" type="number" id="in2"></td>
+			            </tr>
+		            </table>
+			
+			
+			        <table>
+			            <tr>
+							<td style=font-size:11px><abbr title="分娩母猪数占期初配种总数的百分比"><a href="">分娩率<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title="包括健仔、弱仔、死胎、木乃伊、畸形；备注：在此定义弱仔为无效仔猪，无饲养价值"><a href="">窝均产仔总数<small><sup>头/窝</sup></small></a></abbr></style></td>
+			            </tr>
+			            <tr>
+							<td><input class="first" type="number" id="in3"></td>
+							<td><input class="first" type="text" id="in4"></td>
+			            </tr>
+			        </table>
+			
+			
+			        <table>
+			            <tr>
+							<td style=font-size:11px><abbr title="健仔数占窝均产仔总数的百分比"><a href="">健仔率<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title="窝均断奶头数占窝均健仔数的百分比"><a href="">哺乳期成活率<small><sup>%</sup></small></a></abbr></style></td>
+						</tr>
+						<tr>
+							<td><input class="first" type="number" id="in5"></td>
+							<td><input class="first" type="number" id="in6"></td>
+						</tr>
+					</table>
+			
+			
+					<table>
+						<tr>
+							<td style=font-size:11px><abbr title="断奶后7天内发情母猪总数占该批断奶总数的百分比"><a href="">断奶发情率<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title="断奶至配种间隔天数"><a href="">断配间隔<small><sup>天</sup></small></a></abbr></style></td>
+						</tr>
+						<tr>
+							<td><input class="first" type="number" id="in7"></td>
+							<td><input class="first" type="text" id="in8"></td>
+						</tr>
+					</table>
+			
+			
+					<table>
+						<tr>
+							<td style=font-size:11px><abbr title="断奶仔猪转入至保育阶段饲养结束后转出的这个阶段"><a href="">保育舍饲养周期<small><sup>天</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title="保育舍猪全部转出（经过清洗、消毒、干燥、空栏等流程）至下一批断奶仔猪转入的阶段"><a href="">保育舍洗消空栏天数<small><sup>天</sup></small></a></abbr></style></td>
+						</tr>
+						<tr>
+							<td><input class="first" type="number" id="in9"></td>	
+							<td><input class="first" type="number" id="in10"></td>
+						</tr>
+					</table>
+			
+			
+					<table>
+						<tr>
+							<td style=font-size:11px><abbr title="指保育舍每栏饲养头数"><a href="">保育猪数<small><sup>头/栏</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title="指保育每个栋舍或单元的栏位数量"><a href="">保育栏数<small><sup>栏/栋</sup></small></a></abbr></style></td>
+						</tr>
+						<tr>
+							<td><input class="first" type="number" id="in11"></td>
+							<td><input class="first" type="number" id="in12"></td>
+						</tr>
+					</table>
+			
+			
+					<table>
+						<tr>
+							<td style=font-size:11px><abbr title="保育舍期末转出头数占期初转入头数的百分比"><a href="">保育成活率<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title="猪只转入至育肥阶段结束猪只全部转出的这个阶段"><a href="">育肥猪饲养周期<small><sup>天</sup></small></a></abbr></style></td>
+						</tr>
+						<tr>
+							<td><input class="first" type="number" id="in13"></td>
+							<td><input class="first" type="number" id="in14"></td>
+						</tr>
+					</table>
+			
+			
+					<table>
+						<tr>
+							<td style=font-size:11px><abbr title="育肥舍猪只全部转出（经过清洗、消毒、干燥、空栏等流程）至下一批猪只转入的阶段"><a href="">育肥舍洗消空栏天数<small><sup>天</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title="指育肥舍每个栏位的存栏量"><a href="">育肥猪数<small><sup>头/栏</sup></small></a></abbr></style></td>
+						</tr>
+						<tr>
+							<td><input class="first" type="number" id="in15"></td>
+							<td><input class="first" type="number" id="in16"></td>
+						</tr>
+					</table>
+			
+			
+					<table>
+						<tr>
+							<td style=font-size:11px><abbr title="指每栋育肥舍的栏位数量"><a href="">育肥栏数<small><sup>栏/栋</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title="育肥舍期末转出头数占期初转入头数的百分比"><a href="">育肥猪成活率<small><sup>%</sup></small></a></abbr></style></td>
+						</tr>
+						<tr>
+							<td><input class="first" type="number" id="in17"></td>
+							<td><input class="first" type="number" id="in18"></td>	
+						</tr>
+					</table>
+			
+			    <button type="button" onclick="myFunction()">提交</button>
+				</div>
+			
+		</fieldset>
+		<fieldset class="five">
+			<legend></legend>
+				<div style="height: 350px; overflow: auto; font-size: 24px;"><!--录入区 滚动条-->
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">规则返情-NPDS<small><sup>天</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">不规则返情NPDS<small><sup>天</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">PCN-NPDS<small><sup>天</sup></small></a></abbr></style></td>								
+						</tr>
+						<tr>  
+							<td><input class="four" type="text" id="c1" readonly="readonly"></td>
+							<td><input class="four" type="text" id="c2" readonly="readonly"></td>
+							<td><input class="four" type="text" id="c3" readonly="readonly"></td>								
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">NIP-NPDS<small><sup>天</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">流产-NPDS<small><sup>天</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">死亡-NPDS<small><sup>天</sup></small></a></abbr></style></td>								
+						</tr>
+						<tr>  
+							<td><input class="four" type="text" id="c4" readonly="readonly"></td>
+							<td><input class="four" type="text" id="c5" readonly="readonly"></td>
+							<td><input class="four" type="text" id="c6" readonly="readonly"></td>								
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">淘汰-NPDS<small><sup>天</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">非生产天数<small><sup>天/头/年</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">LSY<small><sup>胎/头/年</sup></small></a></abbr></style></td>								
+						</tr>
+						<tr>  
+							<td><input class="four" type="text" id="c7" readonly="readonly"></td>
+							<td><input class="four" type="text" id="c8" readonly="readonly"></td>
+							<td><input class="four" type="text" id="c9" readonly="readonly"></td>								
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">窝均健仔数<small><sup>头/窝</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">窝均断奶头数<small><sup>头/窝</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">PSY<small><sup>头/头/年</sup></small></a></abbr></style></td>								
+						</tr>
+						<tr>  
+							<td><input class="four" type="text" id="c10" readonly="readonly"></td>
+							<td><input class="four" type="text" id="c11" readonly="readonly"></td>
+							<td><input class="four" type="text" id="c12" readonly="readonly"></td>								
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">淘汰母猪头数<small><sup>头/年</sup></small></a></abbr></style></td>	
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">淘汰母猪头数<small><sup>头/批</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">基础母猪占比<small><sup>%</sup></small></a></abbr></style></td>
+						</tr>
+						<tr>  
+							<td><input class="four" type="text" id="c13" readonly="readonly"></td>	
+							<td><input class="four" type="text" id="c14" readonly="readonly"></td>
+							<td><input class="four" type="text" id="c15" readonly="readonly"></td>							
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">主动淘汰数量<small><sup>头/批</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">被动淘汰数量<small><sup>头/批</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">批次配种头数<small><sup>头/批</sup></small></a></abbr></style></td>								
+						</tr>
+						<tr>  
+							<td><input class="four" type="text" id="c16" readonly="readonly"></td>
+							<td><input class="four" type="text" id="c17" readonly="readonly"></td>
+							<td><input class="four" type="text" id="c18" readonly="readonly"></td>								
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">批次分娩头数<small><sup>头/批</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">基础母猪占比<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">配种后备头数<small><sup>头/批</sup></small></a></abbr></style></td>								
+						</tr>
+						<tr>  
+							<td><input class="four" type="text" id="c19" readonly="readonly"></td>
+							<td><input class="four" type="text" id="c20" readonly="readonly"></td>
+							<td><input class="four" type="text" id="c21" readonly="readonly"></td>								
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">基础母猪占比<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">批次占比<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">配种7d内母猪<small><sup>头/批</sup></small></a></abbr></style></td>								
+						</tr>
+						<tr>  
+							<td><input class="four" type="text" id="c22" readonly="readonly"></td>
+							<td><input class="four" type="text" id="c23" readonly="readonly"></td>
+							<td><input class="four" type="text" id="c24" readonly="readonly"></td>								
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">基础母猪占比<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">批次占比<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">配种问题母猪<small><sup>头/批</sup></small></a></abbr></style></td>								
+						</tr>
+						<tr>  
+							<td><input class="four" type="text" id="c25" readonly="readonly"></td>
+							<td><input class="four" type="text" id="c26" readonly="readonly"></td>	
+							<td><input class="four" type="text" id="c27" readonly="readonly"></td>							
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">基础母猪占比<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">批次占比<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">产仔总数<small><sup>头/批</sup></small></a></abbr></style></td>								
+						</tr>
+						<tr>  
+							<td><input class="four" type="text" id="c28" readonly="readonly"></td>
+							<td><input class="four" type="text" id="c29" readonly="readonly"></td>
+							<td><input class="four" type="text" id="c30" readonly="readonly"></td>								
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">基础母猪占比<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">产健仔总数<small><sup>头/批</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">基础母猪占比<small><sup>%</sup></small></a></abbr></style></td>								
+						</tr>
+						<tr>  
+							<td><input class="four" type="text" id="c31" readonly="readonly"></td>
+							<td><input class="four" type="text" id="c32" readonly="readonly"></td>
+							<td><input class="four" type="text" id="c33" readonly="readonly"></td>								
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">断奶总数<small><sup>头/批</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">基础母猪占比<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">MSY<small><sup>头/头/年</sup></small></a></abbr></style></td>								
+						</tr>
+						<tr>  
+							<td><input class="four" type="text" id="c34" readonly="readonly"></td>
+							<td><input class="four" type="text" id="c35" readonly="readonly"></td>
+							<td><input class="four" type="text" id="c36" readonly="readonly"></td>								
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">规则返情/批配<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">不规则返情/批配<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">PCN/批次配种<small><sup>%</sup></small></a></abbr></style></td>								
+						</tr>
+						<tr>  
+							<td><input class="four" type="text" id="c37" readonly="readonly"></td>
+							<td><input class="four" type="text" id="c38" readonly="readonly"></td>
+							<td><input class="four" type="text" id="c39" readonly="readonly"></td>								
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">NIP/批次配种<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">流产/批次配种<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">死亡/批次配种<small><sup>%</sup></small></a></abbr></style></td>								
+						</tr>
+						<tr>  
+							<td><input class="four" type="text" id="c40" readonly="readonly"></td>
+							<td><input class="four" type="text" id="c41" readonly="readonly"></td>
+							<td><input class="four" type="text" id="c42" readonly="readonly"></td>								
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">淘汰/批次配种<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">死胎/产仔总数<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">弱仔/产仔总数<small><sup>%</sup></small></a></abbr></style></td>								
+						</tr>
+						<tr>  
+							<td><input class="four" type="text" id="c43" readonly="readonly"></td>
+							<td><input class="four" type="text" id="c44" readonly="readonly"></td>
+							<td><input class="four" type="text" id="c45" readonly="readonly"></td>								
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">木乃伊/产仔总数<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">畸形/产仔总数<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">压死/窝均健仔<small><sup>%</sup></small></a></abbr></style></td>								
+						</tr>
+						<tr>  
+							<td><input class="four" type="text" id="c46" readonly="readonly"></td>
+							<td><input class="four" type="text" id="c47" readonly="readonly"></td>
+							<td><input class="four" type="text" id="c48" readonly="readonly"></td>								
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">饿死/窝均健仔<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">腹泻/窝均健仔<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">已知疾病/健仔<small><sup>%</sup></small></a></abbr></style></td>								
+						</tr>
+						<tr>  
+							<td><input class="four" type="text" id="c49" readonly="readonly"></td>
+							<td><input class="four" type="text" id="c50" readonly="readonly"></td>
+							<td><input class="four" type="text" id="c51" readonly="readonly"></td>								
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">未知疾病/健仔<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">淘汰/窝均健仔<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">单元数量<small><sup>栋</sup></small></a></abbr></style></td>								
+						</tr>
+						<tr>  
+							<td><input class="four" type="text" id="c52" readonly="readonly"></td>		
+							<td><input class="four" type="text" id="c53" readonly="readonly"></td>
+							<td><input class="four" type="text" id="d1" readonly="readonly"></td>						
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">产床数量<small><sup>张</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">定位栏数量<small><sup>个</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">机会栏数量<small><sup>个</sup></small></a></abbr></style></td>								
+						</tr>
+						<tr>  
+							<td><input class="four" type="text" id="d2" readonly="readonly"></td>
+							<td><input class="four" type="text" id="d3" readonly="readonly"></td>
+							<td><input class="four" type="text" id="d4" readonly="readonly"></td>								
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">调节补充栏数量<small><sup>个</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">保育栏数<small><sup>栏</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">保育单元数<small><sup>栋</sup></small></a></abbr></style></td>								
+						</tr>
+						<tr>  
+							<td><input class="four" type="text" id="d5" readonly="readonly"></td>
+							<td><input class="four" type="text" id="d6" readonly="readonly"></td>
+							<td><input class="four" type="text" id="d7" readonly="readonly"></td>								
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">保育设计存栏<small><sup>头</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">出栏保育猪数<small><sup>头/年</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">育肥栏数<small><sup>栏</sup></small></a></abbr></style></td>								
+						</tr>
+						<tr>  
+							<td><input class="four" type="text" id="d8" readonly="readonly"></td>
+							<td><input class="four" type="text" id="d9" readonly="readonly"></td>
+							<td><input class="four" type="text" id="d10" readonly="readonly"></td>								
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">育肥单元数<small><sup>栋</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">育肥设计存栏<small><sup>头</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">出栏育肥猪数<small><sup>头/年</sup></small></a></abbr></style></td>								
+						</tr>
+						<tr>  
+							<td><input class="four" type="text" id="d11" readonly="readonly"></td>
+							<td><input class="four" type="text" id="d12" readonly="readonly"></td>	
+							<td><input class="four" type="text" id="d13" readonly="readonly"></td>							
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">隔离舍存栏量<small><sup>头</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">后备舍存栏量<small><sup>头</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">公猪舍存栏量<small><sup>头</sup></small></a></abbr></style></td>								
+						</tr>
+						<tr>  
+							<td><input class="four" type="text" id="d14" readonly="readonly"></td>
+							<td><input class="four" type="text" id="d15" readonly="readonly"></td>
+							<td><input class="four" type="text" id="d16" readonly="readonly"></td>								
+						</tr>
+					</table>
+					
+				</div>
+		</fieldset><!--输出区-->	
+		
+		<fieldset class="six">
+			<legend></legend>
+			    <div style="height: 100px; overflow: auto; font-size: 24px;"><!--录入区 滚动条-->
+				    
+					<table>  
+				    	<tr>   
+				    		<td style=font-size:11px><abbr title="母猪预产期前提前转入分娩舍，让其熟悉分娩舍环境"><a href="">提前上床天数<small><sup>天</sup></small></a></abbr></style></td>
+				    		<td style=font-size:11px><abbr title="指母猪分娩开始至断奶转出的阶段"><a href="">哺乳期<small><sup>天</sup></small></a></abbr></style></td>
+				    		<td style=font-size:11px><abbr title="分娩舍某一单元全部转出（经过清洗、消毒、干燥、空栏等程序）至下一批母猪转入的阶段"><a href="">产床洗消天数<small><sup>天</sup></small></a></abbr></style></td>
+				    		<td style=font-size:11px><abbr title="母猪第一次配种至产仔阶段"><a href="">妊娠期<small><sup>天</sup></small></a></abbr></style></td>
+				    		<td style=font-size:11px><abbr title="在产床标准设计需求量的基础上增加的比例"><a href="">产床增比<small><sup>%</sup></small></a></abbr></style></td>
+				    		<td style=font-size:11px><abbr title="主动淘汰是指通过主动评估母猪生产性能并于断奶时主动采取淘汰的措施"><a href="">主动淘汰比例<small><sup>%</sup></small></a></abbr></style></td>
+				    	</tr>
+				    	<tr>  
+				    		<td><input class="two" type="text" id="mi1" value="7"></td>
+				    		<td><input class="two" type="text" id="mi2" value="21"></td>
+				    		<td><input class="two" type="text" id="mi3" value="7"></td>
+				    		<td><input class="two" type="text" id="mi4" value="114"></td>
+				    		<td><input class="two" type="text" id="mi5" value="10"></td>
+				    		<td><input class="two" type="text" id="mi6" value="60"></td>
+				    	</tr>
+				    </table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title="被动淘汰是指非计划性的淘汰，母猪在繁殖阶段由于不可控因素而导致的淘汰"><a href="">被动淘汰比例<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title="规则返情数量占批次问题母猪总数的百分比"><a href="">规则返情占比<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title="不规则返情数量占批次问题母猪总数的百分比"><a href="">不规则返情占比<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title="B超妊娠检查阴性母猪占批次问题母猪总数的百分比"><a href="">PCN占比<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title="视觉妊娠检查阴性母猪占批次问题母猪总数的百分比"><a href="">NIP占比<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title="流产母猪总数占批次问题母猪总数的百分比"><a href="">流产占比<small><sup>%</sup></small></a></abbr></style></td>
+						</tr>
+						<tr>  
+							<td><input class="two" type="text" id="mi7" value="40"></td>
+							<td><input class="two" type="text" id="mi8" value="50"></td>
+							<td><input class="two" type="text" id="mi9" value="20"></td>
+							<td><input class="two" type="text" id="mi10" value="10"></td>
+							<td><input class="two" type="text" id="mi11" value="5"></td>
+							<td><input class="two" type="text" id="mi12" value="5"></td>
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title="死亡母猪总数占批次问题母猪总数的百分比"><a href="">死亡占比<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title="淘汰母猪总数占批次问题母猪总数的百分比"><a href="">淘汰占比<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title="指规则返情所产生的非生产天数"><a href="">规则返情损失<small><sup>天</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title="指不规则返情所产生的非生产天数"><a href="">不规则返情损失<small><sup>天</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title="指B超妊娠检查阴性母猪所产生的非生产天数"><a href="">PCN损失<small><sup>天</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title="通常指视觉妊娠检查阴性母猪所产生的非生产天数"><a href="">NIP损失<small><sup>天</sup></small></a></abbr></style></td>
+						</tr>
+						<tr>  
+							<td><input class="two" type="text" id="mi13" value="5"></td>
+							<td><input class="two" type="text" id="mi14" value="5"></td>
+							<td><input class="two" type="text" id="mi15" value="21"></td>
+							<td><input class="two" type="text" id="mi16" value="30"></td>
+							<td><input class="two" type="text" id="mi17" value="50"></td>
+							<td><input class="two" type="text" id="mi18" value="90"></td>
+							
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title="流产母猪所产生的非生产天数"><a href="">流产损失<small><sup>天</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title="死亡母猪所产生的非生产天数"><a href="">死亡损失<small><sup>天</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title="淘汰母猪所产生的非生产天数"><a href="">淘汰损失<small><sup>天</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title="死胎：仔猪已经发育完全但出生时死亡；无效仔猪包括死胎、弱仔（无饲养价值）、木乃伊、畸形"><a href="">死胎/无效仔猪<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title="弱仔为活仔，但无饲养价值，如体重过低、活力过差等；无效仔猪包括死胎、弱仔（无饲养价值）、木乃伊、畸形"><a href="">弱仔/无效仔猪<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title="在胚胎成熟阶段胎儿死亡，不能被母体吸收所形成的干尸，临床上称为木乃伊；无效仔猪包括死胎、弱仔（无饲养价值）、木乃伊、畸形"><a href="">木乃伊/无效仔猪<small><sup>%</sup></small></a></abbr></style></td>
+						</tr>
+						<tr>  
+							<td><input class="two" type="text" id="mi19" value="65"></td>
+							<td><input class="two" type="text" id="mi20" value="50"></td>
+							<td><input class="two" type="text" id="mi21" value="35"></td>
+							<td><input class="two" type="text" id="mi22" value="50"></td>
+							<td><input class="two" type="text" id="mi23" value="30"></td>
+							<td><input class="two" type="text" id="mi24" value="10"></td>
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title="畸形仔猪可能为活仔，但无饲养价值；无效仔猪包括死胎、弱仔（无饲养价值）、木乃伊、畸形"><a href="">畸形/无效仔猪<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title="基础母猪与参与生产公猪的比例，不包括后备公猪"><a href="">母猪/公猪比<small><sup></sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title="每年配种入群的后备母猪数量占基础母猪总数的百分比"><a href="">种猪年更新率<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title="哺乳期间仔猪压死总数占健仔总数的百分比"><a href="">压死/总损失<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title="哺乳期间仔猪饿死总数占健仔总数的百分比"><a href="">饿死/总损失<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title="哺乳期间仔猪由于腹泻死亡总数占健仔总数的百分比"><a href="">腹泻/总损失<small><sup>%</sup></small></a></abbr></style></td>
+						</tr>
+						<tr>  
+							<td><input class="two" type="text" id="mi25" value="10"></td>
+							<td><input class="two" type="text" id="mi26" value="100"></td>
+							<td><input class="two" type="text" id="mi27" value="40"></td>
+							<td><input class="two" type="text" id="mi28" value="60"></td>
+							<td><input class="two" type="text" id="mi29" value="10"></td>
+							<td><input class="two" type="text" id="mi30" value="10"></td>
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title="哺乳期间仔猪由已知疾病导致死亡总数占健仔总数的百分比"><a href="">已知疾病/总损失<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title="哺乳期间仔猪由未知疾病导致死亡总数占健仔总数的百分比"><a href="">未知疾病/总损失<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title="哺乳期间仔猪由于无饲养价值而被淘汰总数占健仔总数的百分比"><a href="">淘汰/总损失<small><sup>%</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title="指保育阶段的平均损失天数，而非仔猪日龄"><a href="">保育猪死淘阶段<small><sup>天</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title="指育肥阶段的平均损失天数，而非猪只日龄"><a href="">育肥猪死淘阶段<small><sup>天</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title="在定位栏标准设计需求量的基础上增加的比例"><a href="">定位栏增比<small><sup>%</sup></small></a></abbr></style></td>
+						</tr>
+						<tr>  
+							<td><input class="two" type="text" id="mi31" value="5"></td>
+							<td><input class="two" type="text" id="mi32" value="5"></td>
+							<td><input class="two" type="text" id="mi33" value="10"></td>
+							<td><input class="two" type="text" id="mi34" value="15"></td>
+							<td><input class="two" type="text" id="mi35" value="50"></td>
+							<td><input class="two" type="text" id="mi36" value="10"></td>
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title="每年引进后备母猪的次数"><a href="">引种次数<small><sup>次/年</sup></small></a></abbr></style></td>
+						</tr>
+						<tr>  
+							<td><input class="two" type="text" id="mi37" value="4"></td>
+						</tr>
+					</table>
+					
+				</div>
+		</fieldset><!--生产默认指标录入区-->	
+		
+		<fieldset class="sevsn">
+			<legend></legend>
+			    <div style="height: 155px; overflow: auto; font-size: 24px;"><!--录入区 滚动条-->
+			    	
+			    	<table>  
+			    		<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">母固定资产<small><sup>元/头/年</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">生物成本<small><sup>元/头/年</sup></small></a></abbr></style></td>
+			    		</tr>
+			    		<tr>  
+							<td><input class="three" type="text" id="cc1" value=""></td>
+							<td><input class="three" type="text" id="cc2" value=""></td>
+			    		</tr>
+			    	</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">母猪饲料<small><sup>元/头/年</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">母猪药品<small><sup>元/头/年</sup></small></a></abbr></style></td>
+						</tr>
+						<tr>  
+							<td><input class="three" type="text" id="cc3" value=""></td>
+							<td><input class="three" type="text" id="cc4" value=""></td>
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">母猪疫苗<small><sup>元/头/年</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">人员/管理<small><sup>元/头/年</sup></small></a></abbr></style></td>
+						</tr>
+						<tr>  
+							<td><input class="three" type="text" id="cc5" value=""></td>
+							<td><input class="three" type="text" id="cc6" value=""></td>
+						</tr>
+					</table>
+										
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">低值易耗品<small><sup>元/头/年</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">水电燃料<small><sup>元/头/年</sup></small></a></abbr></style></td>			
+						</tr>
+						<tr>  
+							<td><input class="three" type="text" id="cc7" value=""></td>
+							<td><input class="three" type="text" id="cc8" value=""></td>			
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">仔猪药品<small><sup>元/头</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">仔猪疫苗<small><sup>元/头</sup></small></a></abbr></style></td>
+						</tr>
+						<tr>  
+							<td><input class="three" type="text" id="cc9" value=""></td>
+							<td><input class="three" type="text" id="cc10" value=""></td>
+						</tr>
+					</table>
+										
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">教槽料<small><sup>元/头</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">保育固定<small><sup>元/头</sup></small></a></abbr></style></td>			
+						</tr>
+						<tr>  
+							<td><input class="three" type="text" id="cc11" value=""></td>
+							<td><input class="three" type="text" id="cc12" value=""></td>			
+						</tr>
+					</table>
+										
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">保育饲料<small><sup>元/头</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">保育药品<small><sup>元/头</sup></small></a></abbr></style></td>
+						</tr>
+						<tr>  
+							<td><input class="three" type="text" id="cc13" value=""></td>
+							<td><input class="three" type="text" id="cc14" value=""></td>
+						</tr>
+					</table>
+															
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">保育疫苗<small><sup>元/头</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">人工/管理<small><sup>元/头</sup></small></a></abbr></style></td>								
+						</tr>
+						<tr>  
+							<td><input class="three" type="text" id="cc15" value=""></td>
+							<td><input class="three" type="text" id="cc16" value=""></td>								
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">水电燃料<small><sup>元/头</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">育肥固定<small><sup>元/头</sup></small></a></abbr></style></td>
+						</tr>
+						<tr>  
+							<td><input class="three" type="text" id="cc17" value=""></td>
+							<td><input class="three" type="text" id="cc18" value=""></td>
+						</tr>
+					</table>
+										
+					<table>  
+					    <tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">育肥饲料<small><sup>元/头</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">育肥药品<small><sup>元/头</sup></small></a></abbr></style></td>			
+						</tr>
+						<tr>  
+							<td><input class="three" type="text" id="cc19" value=""></td>
+							<td><input class="three" type="text" id="cc20" value=""></td>			
+						</tr>
+					</table>
+										
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">育肥疫苗<small><sup>元/头</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">人工/管理<small><sup>元/头</sup></small></a></abbr></style></td>			
+						</tr>
+						<tr>  
+							<td><input class="three" type="text" id="cc21" value=""></td>
+							<td><input class="three" type="text" id="cc22" value=""></td>			
+						</tr>
+					</table>
+															
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">水电燃料<small><sup>元/头</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">出栏价格<small><sup>元/公斤</sup></small></a></abbr></style></td>								
+						</tr>
+						<tr>  
+							<td><input class="three" type="text" id="cc23" value=""></td>
+							<td><input class="three" type="text" id="cc24" value=""></td>								
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">出栏体重<small><sup>公斤/头</sup></small></a></abbr></style></td>								
+						</tr>
+						<tr>  
+							<td><input class="three" type="text" id="cc25" value=""></td>								
+						</tr>
+					</table>
+					
+				</div>
+		</fieldset><!--成本默认指标录入区-->	
+		
+		
+		
+		<fieldset class="eight">
+			<legend></legend>
+			    <div style="height: 310px; overflow: auto; font-size: 24px;"><!--录入区 滚动条-->
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">母猪成本<small><sup>元/头/年</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">落地成本<small><sup>元/头</sup></small></a></abbr></style></td>	
+						</tr>
+						<tr>  
+							<td><input class="five" type="text" id="e1" readonly="readonly"></td>
+							<td><input class="five" type="text" id="e2" readonly="readonly"></td>	
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">仔猪成本<small><sup>元/头</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">断奶成本<small><sup>元/头</sup></small></a></abbr></style></td>	
+						</tr>
+						<tr>  
+							<td><input class="five" type="text" id="e3" readonly="readonly"></td>
+							<td><input class="five" type="text" id="e4" readonly="readonly"></td>	
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">保育成本<small><sup>元/头</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">死亡成本<small><sup>元/头</sup></small></a></abbr></style></td>	
+						</tr>
+						<tr>  
+							<td><input class="five" type="text" id="e5" readonly="readonly"></td>
+							<td><input class="five" type="text" id="e6" readonly="readonly"></td>	
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">保育猪成本<small><sup>元/头</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">育肥成本<small><sup>元/头</sup></small></a></abbr></style></td>	
+						</tr>
+						<tr>  
+							<td><input class="five" type="text" id="e7" readonly="readonly"></td>
+							<td><input class="five" type="text" id="e8" readonly="readonly"></td>	
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">死亡成本<small><sup>元/头</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">总成本<small><sup>元/头</sup></small></a></abbr></style></td>	
+						</tr>
+						<tr>  
+							<td><input class="five" type="text" id="e9" readonly="readonly"></td>
+							<td><input class="five" type="text" id="e10" readonly="readonly"></td>	
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">单位收益<small><sup>元/公斤</sup></small></a></abbr></style></td>
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">单位收益<small><sup>元/头</sup></small></a></abbr></style></td>	
+						</tr>
+						<tr>  
+							<td><input class="five" type="text" id="e11" readonly="readonly"></td>
+							<td><input class="five" type="text" id="e12" readonly="readonly"></td>	
+						</tr>
+					</table>
+					
+					<table>  
+						<tr>   
+							<td style=font-size:11px><abbr title=""><a href="" target="_blank">总收益<small><sup>万元/年</sup></small></a></abbr></style></td>	
+						</tr>
+						<tr>  
+							<td><input class="five" type="text" id="e13" readonly="readonly"></td>
+						</tr>
+					</table>
+					
+				</div>
+		</fieldset><!--成本输出-->	
+	</body>
+	<script>
+			function myFunction(){
+				var in1=document.getElementById("in1");
+				var in2=document.getElementById("in2");
+				var in3=document.getElementById("in3");
+				var in4=document.getElementById("in4");
+				var in5=document.getElementById("in5");
+				var in6=document.getElementById("in6");
+				var in7=document.getElementById("in7");
+				var in8=document.getElementById("in8");
+				var in9=document.getElementById("in9");
+				var in10=document.getElementById("in10");
+				var in11=document.getElementById("in11");
+				var in12=document.getElementById("in12");
+				var in13=document.getElementById("in13");
+				var in14=document.getElementById("in14");
+				var in15=document.getElementById("in15");
+				var in16=document.getElementById("in16");
+				var in17=document.getElementById("in17");
+				var in18=document.getElementById("in18");
+				
+				var mi1=document.getElementById("mi1");
+				var mi2=document.getElementById("mi2");
+				var mi3=document.getElementById("mi3");
+				var mi4=document.getElementById("mi4");
+				var mi5=document.getElementById("mi5");
+				var mi6=document.getElementById("mi6");
+				var mi7=document.getElementById("mi7");
+				var mi8=document.getElementById("mi8");
+				var mi9=document.getElementById("mi9");
+				var mi10=document.getElementById("mi10");
+				var mi11=document.getElementById("mi11");
+				var mi12=document.getElementById("mi12");
+				var mi13=document.getElementById("mi13");
+				var mi14=document.getElementById("mi14");
+				var mi15=document.getElementById("mi15");
+				var mi16=document.getElementById("mi16");
+				var mi17=document.getElementById("mi17");
+				var mi18=document.getElementById("mi18");
+				var mi19=document.getElementById("mi19");
+				var mi20=document.getElementById("mi20");
+				var mi21=document.getElementById("mi21");
+				var mi22=document.getElementById("mi22");
+				var mi23=document.getElementById("mi23");
+				var mi24=document.getElementById("mi24");
+				var mi25=document.getElementById("mi25");
+				var mi26=document.getElementById("mi26");
+				var mi27=document.getElementById("mi27");
+				var mi28=document.getElementById("mi28");
+				var mi29=document.getElementById("mi29");
+				var mi30=document.getElementById("mi30");
+				var mi31=document.getElementById("mi31");
+				var mi32=document.getElementById("mi32");
+				var mi33=document.getElementById("mi33");
+				var mi34=document.getElementById("mi34");
+				var mi35=document.getElementById("mi35");
+				var mi37=document.getElementById("mi36");
+				var mi37=document.getElementById("mi37");
+				
+				var c1=document.getElementById("c1");
+				var c2=document.getElementById("c2");
+				var c3=document.getElementById("c3");
+				var c4=document.getElementById("c4");
+				var c5=document.getElementById("c5");
+				var c6=document.getElementById("c6");
+				var c7=document.getElementById("c7");
+				var c8=document.getElementById("c8");
+				var c9=document.getElementById("c9");
+				var c10=document.getElementById("c10");
+				var c11=document.getElementById("c11");
+				var c12=document.getElementById("c12");
+				var c13=document.getElementById("c13");
+				var c14=document.getElementById("c14");
+				var c15=document.getElementById("c15");
+				var c16=document.getElementById("c16");
+				var c17=document.getElementById("c17");
+				var c18=document.getElementById("c18");
+				var c19=document.getElementById("c19");
+				var c20=document.getElementById("c20");
+				var c21=document.getElementById("c21");
+				var c22=document.getElementById("c22");
+				var c23=document.getElementById("c23");
+				var c24=document.getElementById("c24");
+				var c25=document.getElementById("c25");
+				var c26=document.getElementById("c26");
+				var c27=document.getElementById("c27");
+				var c28=document.getElementById("c28");
+				var c29=document.getElementById("c29");
+				var c30=document.getElementById("c30");
+				var c31=document.getElementById("c31");
+				var c32=document.getElementById("c32");
+				var c33=document.getElementById("c33");
+				var c34=document.getElementById("c34");
+				var c35=document.getElementById("c35");
+				var c36=document.getElementById("c36");
+				var c37=document.getElementById("c37");
+				var c38=document.getElementById("c38");
+				var c39=document.getElementById("c39");
+				var c40=document.getElementById("c40");
+				var c41=document.getElementById("c41");
+				var c42=document.getElementById("c42");
+				var c43=document.getElementById("c43");
+				var c44=document.getElementById("c44");
+				var c45=document.getElementById("c45");
+				var c46=document.getElementById("c46");
+				var c47=document.getElementById("c47");
+				var c48=document.getElementById("c48");
+				var c49=document.getElementById("c49");
+				var c50=document.getElementById("c50");
+				var c51=document.getElementById("c51");
+				var c52=document.getElementById("c52");
+				var c53=document.getElementById("c53");
+				
+				var d1=document.getElementById("d1");
+				var d2=document.getElementById("d2");
+				var d3=document.getElementById("d3");
+				var d4=document.getElementById("d4");
+				var d5=document.getElementById("d5");
+				var d6=document.getElementById("d6");
+				var d7=document.getElementById("d7");
+				var d8=document.getElementById("d8");
+				var d9=document.getElementById("d9");
+				var d10=document.getElementById("d10");
+				var d11=document.getElementById("d11");
+				var d12=document.getElementById("d12");
+				var d13=document.getElementById("d13");
+				var d14=document.getElementById("d14");
+				var d15=document.getElementById("d15");
+				var d16=document.getElementById("d16");
+				
+				var cc1=document.getElementById("cc1");
+				var cc2=document.getElementById("cc2");
+				var cc3=document.getElementById("cc3");
+				var cc4=document.getElementById("cc4");
+				var cc5=document.getElementById("cc5");
+				var cc6=document.getElementById("cc6");
+				var cc7=document.getElementById("cc7");
+				var cc8=document.getElementById("cc8");
+				var cc9=document.getElementById("cc9");
+				var cc10=document.getElementById("cc10");
+				var cc11=document.getElementById("cc11");
+				var cc12=document.getElementById("cc12");
+				var cc13=document.getElementById("cc13");
+				var cc14=document.getElementById("cc14");
+				var cc15=document.getElementById("cc15");
+				var cc16=document.getElementById("cc16");
+				var cc17=document.getElementById("cc17");
+				var cc18=document.getElementById("cc18");
+				var cc19=document.getElementById("cc19");
+				var cc20=document.getElementById("cc20");
+				var cc21=document.getElementById("cc21");
+				var cc22=document.getElementById("cc22");
+				var cc23=document.getElementById("cc23");
+				var cc24=document.getElementById("cc24");
+				var cc25=document.getElementById("cc25");
+				
+				var e1=document.getElementById("e1");
+				var e2=document.getElementById("e2");
+				var e3=document.getElementById("e3");
+				var e4=document.getElementById("e4");
+				var e5=document.getElementById("e5");
+				var e6=document.getElementById("e6");
+				var e7=document.getElementById("e7");
+				var e8=document.getElementById("e8");
+				var e9=document.getElementById("e9");
+				var e10=document.getElementById("e10");
+				var e11=document.getElementById("e11");
+				var e12=document.getElementById("e12");
+				var e13=document.getElementById("e13");
+				
+				var dn=document.getElementById('dn');
+				var pg=document.getElementById('pg');
+				var ls=document.getElementById('ls');
+				var ms=document.getElementById('ms');
+				
+				
+				
+	
+				
+			    c1.value=((100-parseFloat(in3.value))/100*(parseFloat(mi8.value)/100)*parseFloat(mi15.value)).toFixed(3)
+				c2.value=((100-parseFloat(in3.value))/100*(parseFloat(mi9.value)/100)*parseFloat(mi16.value)).toFixed(3)
+				c3.value=((100-parseFloat(in3.value))/100*(parseFloat(mi10.value)/100)*parseFloat(mi17.value)).toFixed(3)
+				c4.value=((100-parseFloat(in3.value))/100*(parseFloat(mi11.value)/100)*parseFloat(mi18.value)).toFixed(3)
+				c5.value=((100-parseFloat(in3.value))/100*(parseFloat(mi12.value)/100)*parseFloat(mi19.value)).toFixed(3)
+				c6.value=((100-parseFloat(in3.value))/100*(parseFloat(mi13.value)/100)*parseFloat(mi20.value)).toFixed(3)
+				c7.value=((100-parseFloat(in3.value))/100*(parseFloat(mi14.value)/100)*parseFloat(mi21.value)).toFixed(3)
+				c8.value=(parseFloat(in8.value)+parseFloat(c1.value)+parseFloat(c2.value)+parseFloat(c3.value)+parseFloat(c4.value)+parseFloat(c5.value)+parseFloat(c6.value)+parseFloat(c7.value)).toFixed(3)
+		        c9.value=(365/(parseFloat(mi2.value)+parseFloat(mi4.value)+parseFloat(c8.value))).toFixed(3)
+		        c10.value=(parseFloat(in4.value)*parseFloat(in5.value)/100).toFixed(3)
+				c11.value=(parseFloat(c10.value)*parseFloat(in6.value)/100).toFixed(3)
+				c12.value=(parseFloat(c9.value)*parseFloat(c11.value)).toFixed(3)
+				c13.value=(parseFloat(in1.value)*parseFloat(mi27.value)/100).toFixed(0)
+				c14.value=(parseFloat(c13.value)/(365/7)*parseFloat(in2.value)).toFixed(0)
+				c15.value=(parseFloat(c14.value)/parseFloat(in1.value)*100).toFixed(1)
+		        
+				c16.value=(parseFloat(c14.value)*parseFloat(mi6.value)/100).toFixed(0)
+				
+				c17.value=(parseFloat(c14.value)*parseFloat(mi7.value)/100).toFixed(0)
+				
+				c18.value=(parseFloat(in1.value)*parseFloat(c9.value)/(parseFloat(in3.value)/100)/(365/7)*parseFloat(in2.value)).toFixed(2)
+				
+				c19.value=(parseFloat(c18.value)*parseFloat(in3.value)/100).toFixed(2)
+				
+				c20.value=(parseFloat(c19.value)/parseFloat(in1.value)*100).toFixed(0)
+		        
+				c21.value=parseFloat(c14.value).toFixed(0)
+				
+				c22.value=parseFloat(c15.value).toFixed(1)
+				
+				c23.value=((parseFloat(c21.value)/parseFloat(c18.value)).toFixed(8)*100).toFixed(0)
+				c24.value=((parseFloat(c19.value)-parseFloat(c16.value))*(parseFloat(in7.value)/100)).toFixed(0)
+				c25.value=(parseFloat(c24.value)/parseFloat(in1.value)*100).toFixed(0)
+				c26.value=(parseFloat(c24.value)/parseFloat(c18.value)*100).toFixed(0)
+				c27.value=(parseFloat(c18.value)-parseFloat(c21.value)-parseFloat(c24.value)).toFixed(0)
+				c28.value=(parseFloat(c27.value)/parseFloat(in1.value)*100).toFixed(1)
+				c29.value=(parseFloat(c27.value)/parseFloat(c18.value)*100).toFixed(0)
+				c30.value=(parseFloat(c19.value)*parseFloat(in4.value)).toFixed(0)
+				
+				c31.value=(parseFloat(c30.value)/parseFloat(in1.value)*100).toFixed(0)
+				c32.value=(parseFloat(c30.value)*parseFloat(in5.value)/100).toFixed(0)
+				c33.value=(parseFloat(c32.value)/parseFloat(in1.value)*100).toFixed(0)
+				c34.value=(parseFloat(c32.value)*parseFloat(in6.value)/100).toFixed(1)
+				c35.value=(parseFloat(c34.value)/parseFloat(in1.value)*100).toFixed(0)
+				c36.value=(parseFloat(c12.value)*parseFloat(in18.value)/100*parseFloat(in13.value)/100).toFixed(2)
+				c37.value=(100-parseFloat(in3.value))*parseFloat(mi8.value)/100
+				c38.value=(100-parseFloat(in3.value))*parseFloat(mi9.value)/100
+				c39.value=(100-parseFloat(in3.value))*parseFloat(mi10.value)/100
+				c40.value=(100-parseFloat(in3.value))*parseFloat(mi11.value)/100
+				c41.value=(100-parseFloat(in3.value))*parseFloat(mi12.value)/100
+				c42.value=(100-parseFloat(in3.value))*parseFloat(mi13.value)/100
+				c43.value=(100-parseFloat(in3.value))*parseFloat(mi14.value)/100
+				c44.value=(100-parseFloat(in5.value))/100*parseFloat(mi22.value)
+				c45.value=(100-parseFloat(in5.value))/100*parseFloat(mi23.value)
+				c46.value=(100-parseFloat(in5.value))/100*parseFloat(mi24.value)
+				c47.value=(100-parseFloat(in5.value))/100*parseFloat(mi25.value)
+				
+				c48.value=((parseFloat(c10.value)-parseFloat(c11.value))*(parseFloat(mi28.value)/100)/parseFloat(c10.value)*100).toFixed(1)
+				c49.value=((parseFloat(c10.value)-parseFloat(c11.value))*(parseFloat(mi29.value)/100)/parseFloat(c10.value)*100).toFixed(1)
+				c50.value=((parseFloat(c10.value)-parseFloat(c11.value))*(parseFloat(mi30.value)/100)/parseFloat(c10.value)*100).toFixed(1)
+				c51.value=((parseFloat(c10.value)-parseFloat(c11.value))*(parseFloat(mi31.value)/100)/parseFloat(c10.value)*100).toFixed(1)
+				c52.value=((parseFloat(c10.value)-parseFloat(c11.value))*(parseFloat(mi32.value)/100)/parseFloat(c10.value)*100).toFixed(1)
+				c53.value=((parseFloat(c10.value)-parseFloat(c11.value))*(parseFloat(mi33.value)/100)/parseFloat(c10.value)*100).toFixed(1)
+				
+				d1.value=(Math.ceil((parseFloat(mi1.value)+parseFloat(mi2.value)+parseFloat(mi3.value))/7/parseFloat(in2.value))).toFixed(0)
+				d2.value=(parseFloat(d1.value)*parseFloat(c19.value)*(1+(parseFloat(mi5.value)/100))).toFixed(0)
+				d3.value=(Math.ceil((parseFloat(mi4.value)-parseFloat(mi1.value))/7/parseFloat(in2.value)*parseFloat(c18.value))*(1+(parseFloat(mi36.value)/100))).toFixed(0)
+		        d4.value=(parseFloat(c18.value)*((parseFloat(c39.value)/100)+(parseFloat(c40.value)/100)+(parseFloat(c41.value)/100))*6).toFixed(0)
+		        d5.value=(parseFloat(c18.value)*(100-parseFloat(in3.value))/100*6).toFixed(0)
+				d6.value=(Math.ceil((parseFloat(in9.value)+parseFloat(in10.value))/7/parseFloat(in2.value))*(parseFloat(c34.value)/parseFloat(in11.value))).toFixed(0)
+				d7.value=(parseFloat(d6.value)/parseFloat(in12.value)).toFixed(0)
+				d8.value=(parseFloat(d7.value)*parseFloat(in12.value)*parseFloat(in11.value)).toFixed(0)
+		        d9.value=(parseFloat(c34.value)/parseFloat(in2.value)*(365/7)*(parseFloat(in13.value)/100)).toFixed(0)
+		        d10.value=(Math.ceil((parseFloat(in14.value)+parseFloat(in15.value))/7/parseFloat(in2.value))*(parseFloat(c34.value)*(parseFloat(in13.value)/100)/parseFloat(in16.value))).toFixed(0)
+		        d11.value=(parseFloat(d10.value)/parseFloat(in17.value)).toFixed(0)
+				d12.value=(parseFloat(d11.value)*parseFloat(in17.value)*parseFloat(in16.value)).toFixed(0)
+		        d13.value=(parseFloat(d9.value)*(parseFloat(in18.value)/100)).toFixed(0)
+				d14.value=(parseFloat(in1.value)*(parseFloat(mi27.value)/100)/parseFloat(mi37.value)).toFixed(0)
+				d15.value=(parseFloat(d14.value)).toFixed(0)
+				d16.value=(parseFloat(in1.value)/parseFloat(mi26.value)).toFixed(0)
+				
+				e1.value=(parseFloat(cc1.value)+parseFloat(cc2.value)+parseFloat(cc3.value)+parseFloat(cc4.value)+parseFloat(cc5.value)+parseFloat(cc6.value)+parseFloat(cc7.value)+parseFloat(cc8.value)).toFixed(1)
+		        e2.value=(parseFloat(e1.value)/(parseFloat(in4.value)*parseFloat(c9.value))).toFixed(1)
+		        e3.value=(parseFloat(cc9.value)+parseFloat(cc10.value)+parseFloat(cc11.value)).toFixed(1)
+		        e4.value=(parseFloat(e1.value)/parseFloat(c12.value)+parseFloat(e3.value)).toFixed(1)
+		        e5.value=(parseFloat(cc12.value)+parseFloat(cc13.value)+parseFloat(cc14.value)+parseFloat(cc15.value)+parseFloat(cc16.value)+parseFloat(cc17.value)).toFixed(1)
+				e6.value=((parseFloat(c11.value)*(100-parseFloat(in13.value))/100)*
+				(parseFloat(e4.value)+parseFloat(e5.value)*(parseFloat(mi34.value)/parseFloat(in9.value)))/
+				(parseFloat(c11.value)*(parseFloat(in13.value)/100))).toFixed(1)
+				e7.value=(parseFloat(e4.value)+parseFloat(e5.value)+parseFloat(e6.value)).toFixed(1)
+				e8.value=(parseFloat(cc18.value)+parseFloat(cc19.value)+parseFloat(cc20.value)+parseFloat(cc21.value)+parseFloat(cc22.value)+parseFloat(cc23.value)).toFixed(1)
+		        e9.value=(parseFloat(c11.value)*(1-(parseFloat(in13.value)*parseFloat(in18.value))/10000)*(parseFloat(e7.value)+parseFloat(e8.value)*parseFloat(mi35.value)/parseFloat(in14.value))/(parseFloat(c11.value)*parseFloat(in13.value)*parseFloat(in18.value)/10000)).toFixed(1)
+		        e10.value=(parseFloat(e7.value)+parseFloat(e8.value)+parseFloat(e9.value)).toFixed(1)
+		        e11.value=(parseFloat(cc24.value)-(parseFloat(e10.value)/parseFloat(cc25.value))).toFixed(1)
+		        e12.value=(parseFloat(cc24.value)*parseFloat(cc25.value)-parseFloat(e10.value)).toFixed(1)
+		        e13.value=(parseFloat(d13.value)*parseFloat(e12.value)/10000).toFixed(1)
+				
+				dn.value=parseFloat(c11.value)
+				pg.value=parseFloat(c12.value)
+				ls.value=parseFloat(c9.value)
+				ms.value=parseFloat(c36.value)
+				
+			}
+		</script>
+
+	
+	
+</html>
